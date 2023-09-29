@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabetical order.</title>
+    <link href="button.css" rel="stylesheet" />
+  </head>
+  <body>
+    <script>
+      let alphaFunc = function (str) {
+        let map = new Map();
+
+        for (let i = 0; i < str.length; i++) {
+          map.set(i, str.charCodeAt(i));
+        }
+
+        let sortedMap = new Map(
+          [...map.entries()].sort(([, a], [, b]) => a - b)
+        );
+
+        return [...sortedMap.values()].reduce(function (acc, value) {
+          return acc + String.fromCharCode(value);
+        }, "");
+      };
+
+      let otherAlphaFun = function (str) {
+        return str.split("").sort().join("");
+      };
+
+      console.log(`Input : webmaster`);
+      console.log(alphaFunc("webmaster"), otherAlphaFun("webmaster"));
+    </script>
+    <h1>JavaScript function that returns a passed string with letters in
+        alphabetical order</h1>
+        <button class="btn">Visit console</button>
+        
+  </body>
+</html>

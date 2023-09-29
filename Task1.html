@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Number</title>
+    <link href="button.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <script>
+      let number = 32243;
+      console.log("Original number is : " + number);
+      let result = 0;
+      while (number > 0) {
+        rightmost = number % 10;
+
+        result = result * 10 + rightmost;
+
+        number = Math.floor(number / 10);
+      }
+      console.log("Reversed number is : " + result);
+    </script>
+    <h1>Reverse a number using javascript function </h1>
+    <button class="btn">Visit console</button>
+  </body>
+</html>
